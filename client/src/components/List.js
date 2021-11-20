@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import archive from '../images/archive.svg';
 import trash from '../images/trash.svg';
-import user from '../images/user.svg';
 
 const List = ({data}) => {
     return (
@@ -43,7 +42,7 @@ const List = ({data}) => {
                             }
                         }
                        return <Row className="tableData" key={item.candidate}>
-                            <Col className={item.last_comms.unread ? 'unread' : ''}><img src={user} alt="user" className="user-img"/><span>{item.candidate}</span></Col>
+                            <Col className={item.last_comms.unread ? 'unread' : ''}><img src={item.image} alt="user" className="user-img"/><span>{item.candidate}</span></Col>
                             <Col className={item.last_comms.unread ? 'unread' : ''}>{item.role}</Col>
                             <Col><span className={item.last_comms.unread ? 'unread' : ''}>{item.last_comms.description}</span> <span className="last-comm">{item.last_comms.received_date}</span> </Col>
                             <Col className="salary">{new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR',maximumSignificantDigits: 3 }).format(item.salary)}</Col>

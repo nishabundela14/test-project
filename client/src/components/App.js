@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
        data:[],
        classname: 'btn-show-ar',
-       show: true,
+       show: false,
        label:'Show Archived',
        search : ''
     }
@@ -21,21 +21,21 @@ class App extends Component {
       this.setState({data: list.data})
   }
 
-  fetchArchiveAPI = async(val) => {
+  fetchArchiveAPI = async() => {
     const list = await api.getArchiveList(!this.state.show);
     if(this.state.show === true) {
       this.setState({
         data: list.data,
-        classname: 'btn-hide-ar',
+        classname: 'btn-show-ar',
         show: false,
-        label:'Hide Archived'
+        label:'Show Archived'
       })
     } else{
       this.setState({
         data: list.data,
-        classname: 'btn-show-ar',
+        classname: 'btn-hide-ar',
         show: true,
-        label:'Show Archived'
+        label:'Hide Archived'
       })
     }
    
