@@ -1,0 +1,144 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Spartan');
+
+$h1Font : 32px;
+$h1color : #0C0E16;
+$h3Font : 12px;
+$h3color : #888EB0;
+$rowsize: 16px;
+$rowsize1: 10px;
+$rowcolor: #0C0E16;
+$lightcolor: #B0B5CF;
+$font-weight: bold;
+$green: #55D698;
+$red : #EC5757;
+$lightgreen: #F5FDF9;
+$lightred: #FEF5F5;
+$lineheight: 50px;
+
+
+
+.App{
+  background-color: #E5E5E5;
+  height: 100vh;
+  font-family: 'Spartan';
+  .top-bar{
+    background-color: #373B53;
+    height:98px;
+    margin-bottom: 30px;
+    .user{
+      margin-right:50px;
+      margin-top:30px;
+    }
+    .search{
+      width:236px;
+      margin-top:20px;
+      position:relative;
+      input{
+        width:236px;
+        border-radius:20px;
+        height:48px;
+        border:1px solid #000;
+        background-color: #F8F8FB;
+        position:relative;
+        text-indent: 15px;
+      }
+      .searchImg{
+        position:absolute;
+        top:13px;
+        right: 10px;
+      }
+    }
+  }
+  .content{
+    width: 85%;
+    margin: 0 auto;
+    h1{
+      font-size: $h1Font;
+      color: $h1color;
+    }
+    h3{
+      font-size: $h3Font;
+      color: $h3color;
+    }
+    .list{
+      margin-top: 50px;
+      .tableHead{
+        border-radius: 10px;
+        padding: 10px;
+        background-color:#DFEAFA;
+        margin-bottom: 30px;
+        font-size: $h3Font;
+        color:#000;
+        font-weight: $font-weight;
+      }
+      .tableData{
+        border-radius: 10px;
+        padding: 15px 7px;
+        background-color:white;
+        margin-bottom: 30px;
+        font-size: $h3Font;
+        color:$h3color;
+        font-weight: $font-weight;
+        .salary{
+          color: $rowcolor;
+          font-size: $rowsize;
+          line-height: $lineheight;
+        }
+        .last-comm{
+          color: $lightcolor;
+          font-size: $rowsize1;
+        }
+        .unread{
+          font-weight: $font-weight;
+        }
+        .col{
+          margin: auto 0
+        }
+        .user-img{
+          padding-top: 5px;
+          padding-right: 15px;
+        }
+        button{
+          background-color: transparent;
+          border: none;
+          line-height: $lineheight;
+        }
+        .archivedText{
+          font-size: $h3Font;
+          border-radius: 10px;
+          padding: 15px;
+          text-align: center;
+          width: 70%;
+          font-weight: $font-weight;
+        }
+        .archive{
+            background-color:$lightred;
+            color: $red;
+            .dot{
+              background-image: url('../images/red.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+              padding: 10px;
+            }
+          }
+          .unarchive{
+            background-color: $lightgreen;
+            color: $green;
+            .dot{
+              background-image: url('../images/green.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+              padding: 10px;
+            }
+          }
+      }
+    }
+  }
+  .left{
+    float: left;
+  }
+  .right{
+    float: right;
+  }
+}

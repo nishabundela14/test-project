@@ -1,0 +1,46 @@
+.archive{
+    @mixin button-bg($bg, $lightbg) {
+        background: $bg;
+        &:hover {
+          background:$lightbg;
+          transition: all 0.3s ease;
+        }
+    }
+      
+    button {
+       color:white;
+       text-decoration:none;
+       padding:15px 10px;
+       border-radius:60px;
+       font-family: 'spartan';
+       font-weight: bold;
+       font-size:12px;
+       border: none;
+       cursor: pointer;
+       float: right;
+       span {
+            border-radius:20px;
+            background-color: white;
+            padding: 10px 16px;
+            margin-right: 5px
+       }
+    }
+    
+    .btn-show-ar {
+        @include button-bg(#1C97F3, #70BDFA );
+        span {
+        background-image: url('../images/plus.svg');
+        background-repeat: no-repeat;
+        background-position: center
+       }
+    }
+    
+    .btn-hide-ar {
+        @include button-bg(#1C97F3, #70BDFA );
+        span {
+            background-image: url('../images/minus.svg');
+            background-repeat: no-repeat;
+            background-position: center
+        }
+    }
+}
