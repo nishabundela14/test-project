@@ -8,4 +8,6 @@ router.get('/search', interview.searchList)
 
 router.get('/archive', interview.archiveList)
 
+router.get('/statusArchive/:candidate', interview.toggleArchive)
+
 module.exports = router;

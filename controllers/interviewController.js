@@ -46,3 +46,26 @@ exports.archiveList = (req, res) => {
         }
     }
 }
+
+exports.toggleArchive = (req, res) => {
+    let newList = [];
+    const candidate = req.params.candidate;
+    const archive = req.query.archived;
+    if(list) {
+        list.forEach((item) => {
+            if(item.candidate.toLowerCase() === candidate.toLowerCase()) {
+                (item.archived === true) ? item.archived = false : item.archived = true;
+            }
+        });
+        if(archive.toString() === 'true') {
+            res.status(200).json(list);
+        } else {
+            list.forEach((item) => {
+                if(item.archived.toString() === 'false') {
+                    newList.push(item)
+                }
+            });
+            res.status(200).json(newList);
+        }
+    }
+}

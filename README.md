@@ -34,5 +34,6 @@ The code deployed to Github and app deployed to Heroku for preview.
 - Also new data should be listed first which will be good option and can have folder view where we could have seen archive , trash kind of data.
 - Due to time i was not able to implement date and time functionality properly on last communication field
 - I have used api calls for search and archive functionality as was thinking in case of large data front end search and filter is not good option.
+- I didn't use Typescript as my setup giving some error and taking to long to resolve.
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import Archive from './Archive';
 import List from './List';
 
-const Content = ({data,fetchArchiveAPI, classname, label}) => {
+const Content = ({data,fetchArchiveAPI, classname, label,fetchArchiveStatusAPI}) => {
   return (
     <>
        <div className="content">
@@ -11,7 +11,7 @@ const Content = ({data,fetchArchiveAPI, classname, label}) => {
             <h3>There are {data.length} candidates in the list</h3>
           </div>
           <Archive fetchArchiveAPI={fetchArchiveAPI} classname={classname} label={label}/>
-          <List data={data} />
+          <List data={data} fetchArchiveStatusAPI={fetchArchiveStatusAPI} />
         </div>
       </>
   )

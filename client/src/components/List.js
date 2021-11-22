@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import archive from '../images/archive.svg';
 import trash from '../images/trash.svg';
 
-const List = ({data}) => {
+const List = ({data, fetchArchiveStatusAPI}) => {
     return (
         <>
             <Container fluid className="left list">
@@ -50,8 +50,8 @@ const List = ({data}) => {
                             <Col><div className={item.archived ? 'archivedText archive' : 'archivedText unarchive'}><span className="dot"></span>{item.archived ? 'Archived' : 'Active'}</div></Col>
                             <Col>{
                                 item.archived ?
-                                <button><img src={archive} alt="archive"/></button>
-                                : <button><img src={trash} alt="trash"/></button>
+                                <button onClick={() => fetchArchiveStatusAPI(item.candidate)}><img src={archive} alt="archive"/></button>
+                                : <button onClick={() => fetchArchiveStatusAPI(item.candidate)}><img src={trash} alt="trash"/></button>
                             }</Col>
                         </Row>
                     })

@@ -45,6 +45,11 @@ class App extends Component {
     const list = await api.getSearchList(search);
     this.setState({data: list.data})
   }
+
+  fetchArchiveStatusAPI = async(candidate) => {
+    const list = await api.getArchiveStatus(candidate, this.state.show);
+    this.setState({data: list.data})
+  }
   
   render() {
     const {data, classname, label} = this.state;
@@ -55,7 +60,8 @@ class App extends Component {
        data={data}
        fetchArchiveAPI={this.fetchArchiveAPI} 
        classname={classname} 
-       label={label}/>
+       label={label}
+       fetchArchiveStatusAPI={this.fetchArchiveStatusAPI}/>
       </div>
     )
   }
